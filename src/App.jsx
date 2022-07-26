@@ -5,6 +5,65 @@ import { Sidebar } from "./components/Sidebar";
 import "./global.css";
 import styles from "./App.module.css";
 
+// author: { avatar_url: '', name?: '', role: ''}
+// publishedAt: Date
+//content: String
+
+const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: "https://github.com/ricardroberg.png",
+      name: "Ricard Roberg",
+      role: "Software Developer Intern @ Intelie by Viasat",
+    },
+    content: [
+      { type: "paragraph", content: "Fala galeraa 👋" },
+
+      {
+        type: "paragraph",
+        content:
+          "Acabei de subir mais um projeto no meu portifa. É um projeto que fiz",
+      },
+      {
+        type: "paragraph",
+        content:
+          "no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀",
+      },
+      { type: "link", content: "jane.design/doctorcare" },
+      { type: "hashTag", content: "#novoprojeto" },
+      { type: "hashTag", content: "#nlw" },
+      { type: "hashTag", content: "#rocketseat" },
+    ],
+    publishedAt: new Date("2022-06-15 21:05:33"),
+  },
+  {
+    id: 1,
+    author: {
+      avatarUrl: "https://github.com/diego3g.png",
+      name: "Diego Fernandes",
+      role: "CTO @ Rocketseat",
+    },
+    content: [
+      { type: "paragraph", content: "Fala galeraa 👋" },
+
+      {
+        type: "paragraph",
+        content:
+          "Acabei de subir mais um projeto no meu portifa. É um projeto que fiz",
+      },
+      {
+        type: "paragraph",
+        content:
+          "no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀",
+      },
+      { type: "link", content: "jane.design/doctorcare" },
+      { type: "hashTag", content: ["#novoprojeto", "#nlw", "#rocketseat"] },
+    ],
+    publishedAt: new Date("2022-07-25 11:05:33"),
+  },
+];
+
 export function App() {
   return (
     <div>
@@ -12,11 +71,13 @@ export function App() {
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
-          <Post
-            author="Ricard Roberg"
-            content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam et, cupiditate aspernatur mollitia distinctio, quaerat eum iste vero nihil praesentium harum quo enim earum temporibus hic magni blanditiis aliquam beatae?"
-          />
-          <Post author="Henrik Roberg" content="Vou estudar muito" />
+          {posts.map((post) => (
+            <Post
+              author={post.author}
+              content={post.content}
+              publishedAt={post.publishedAt}
+            />
+          ))}
         </main>
       </div>
     </div>
