@@ -1,69 +1,72 @@
 # My Notes (will be formatted)
-
-WHAT DO I LEARN (Ignite React.js II (with Vite))
-
+<br/>
+WHAT DO I LEARN (Ignite React.js II (with Vite))<br/>
+<br/>
 Components
 States
 Hooks
 Scoped CSS (css-modules)
-
-Phosphor Icons (npm install phosphor-react)
-Date FNS (npm i date-fns) - Work with dates
-
+<br/>
+Phosphor Icons (npm install phosphor-react)<br/>
+Date FNS (npm i date-fns) - Work with dates<br/>
+<br/>
 RENDERING PATTERNS
-
-SSR - Back-End => Front-End
-Server Side Render (Defaul pattern, server process request and return HTML, CSS, JS already compiled)
-SPA - Back-End => FrameWork(React, etc) => Front-Side
-Single Page Application (Growing concept. Backend return basicly request data as JSON\*)
-
-Compilers - Babel (Convert code to browser friendly compatible format)
-Bundle - Webpack (Organize multiple module file dependencies to static files) (Other options Vite, Snowpack)
+<br/>
+SSR - Back-End => Front-End<br/>
+ => Server Side Render (Defaul pattern, server process request and return HTML, CSS, JS already compiled)<br/>
+SPA - Back-End => FrameWork(React, etc) => Front-Side<br/>
+ => Single Page Application (Growing concept. Backend return basicly request data as JSON\*)<br/>
+<br/>
+Compilers - Babel (Convert code to browser friendly compatible format)<br/>
+Bundle - Webpack (Organize multiple module file dependencies to static files) (Other options Vite, Snowpack)<br/>
 
 caniuse.com => Browser compatibility
 
 - JavaScrip Object Notation
 
-Projetc
-BASIC STEP
+Projetc<br/>
+BASIC STEP<br/>
+<ol>
+<li>install Note last LTS</li>
+<li>npm create vite@latest</li>
+<li>project-name / react / react (TS will be added latter)</li>
+<li>cd project-name</li>
+<li>npm i (install dependencies)</li>
+<li>npm run dev</li>
+</ol>
 
-1 - install Note last LTS
-2 - npm create vite@latest
-y / project-name / react / react (TS will be added latter)
-3 - cd project-name
-4 - npm i (install dependencies)
-5 - npm run dev
+WORKING WITH COMPONENTS<br/>
 
-WORKING WITH COMPONENTS
+React Component: "Any function that return HTML content"<br/>
 
-React Component: "Any function that return HTML content"
+Defaul Export - the function/component can be imported with any name:<br/>
+Post.jsx: ... export default Post(){}<br/>
+=> App.jsx: ... import PostComponent from './Post'<br/>
+=> can lead to use wrong component name in application<br/>
 
-Defaul Export - the function/component can be imported with any name:
-Post.jsx: ... export default Post(){}
-App.jsx: ... import PostComponent from './Post'
-can lead to use wrong component name in application
+vs<br/>
 
-vs
+Named Export - must import the component with same name and curly brackets<br/>
+=> Post.jsx: ... export Post(){}<br/>
+=> App.jsx: ... import { Post } from './Post'<br/>
 
-Named Export - must import the component with same name and curly brackets
-Post.jsx: ... export Post(){}
-App.jsx: ... import { Post } from './Post'
-
-create a component folder inside root/src and, on demand, create folders for those components
-project_root/src/components/
+create a component folder inside root/src and, on demand, create folders for those components<br/>
+project_root/src/components/<br/>
 Header/ Header.jsx Header.module.css or styles.css
-LogIn/ LogIn.jsx ...
-Main/ Main.jsx ...
-Footer/ Footer.jsx ... (so on and so forth)
+<ul>
+<li>LogIn/ LogIn.jsx ...</li>
+<li>Main/ Main.jsx ...</li>
+<li>Footer/ Footer.jsx ... (so on and so forth)</li>
+</ul>
 
-PROPERTIES
-Passing to values/"variables" to components as props
-Post.jsx: ... export default Post(props){}
-App.jsx: ... <Post author='AnyName' content'any text' />
-each component can have his own values
+PROPERTIES<br/>
+Passing to values/"variables" to components as props<br/>
+=> Post.jsx: ... export default Post(props){}<br/>
+=> App.jsx: ... <Post author='AnyName' content'any text' /><br/>
+each component can have his own values<br/>
 
-HTML
-Attention to semantic
+HTML<br/>
+Attention to semantic<br/>
 
 Scoped CSS (css-modules)
 import Fonts on index.html (tip- move preconnect to top of index.html <head>, below charset)
