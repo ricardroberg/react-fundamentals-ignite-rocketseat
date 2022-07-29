@@ -1,14 +1,20 @@
 # My Notes (will be formatted)
+
 <br/>
 WHAT DO I LEARN (Ignite React.js II (with Vite))<br/>
 <br/>
-Components
+### Components<br/>
+=> useSate (immutability -  object cannot be changed, only recreated)<br/><br/>
+### Closures<br/>
+=> "Inside an scope or function each time you change a state (useState) the element will create a new context. To avoid this you cant asign the state to a variable or execute a function inside set element state function (setNewState((state)=>{return state + 1}))" - something like that.<br/>
+
 States
 Hooks
 Scoped CSS (css-modules)
 <br/>
 Phosphor Icons (npm install phosphor-react)<br/>
 Date FNS (npm i date-fns) - Work with dates<br/>
+UUID (npm i react-uuid) - to generate unique keys <br/>
 <br/>
 RENDERING PATTERNS
 <br/>
@@ -26,6 +32,7 @@ caniuse.com => Browser compatibility
 
 Projetc<br/>
 BASIC STEP<br/>
+
 <ol>
 <li>install Note last LTS</li>
 <li>npm create vite@latest</li>
@@ -40,19 +47,24 @@ WORKING WITH COMPONENTS<br/>
 React Component: "Any function that return HTML content"<br/>
 
 Defaul Export - the function/component can be imported with any name:<br/>
-Post.jsx: ... export default Post(){}<br/>
-=> App.jsx: ... import PostComponent from './Post'<br/>
+Post.jsx: <br/>
+`export default Post(){}`<br/>
+=> App.jsx:<br/>
+`import PostComponent from './Post'`<br/>
 => can lead to use wrong component name in application<br/>
 
 vs<br/>
 
 Named Export - must import the component with same name and curly brackets<br/>
-=> Post.jsx: ... export Post(){}<br/>
-=> App.jsx: ... import { Post } from './Post'<br/>
+=> Post.jsx:
+`export Post(){}`<br/>
+=> App.jsx:
+`import { Post } from './Post'`<br/>
 
 create a component folder inside root/src and, on demand, create folders for those components<br/>
 project_root/src/components/<br/>
 Header/ Header.jsx Header.module.css or styles.css
+
 <ul>
 <li>LogIn/ LogIn.jsx ...</li>
 <li>Main/ Main.jsx ...</li>
@@ -61,8 +73,11 @@ Header/ Header.jsx Header.module.css or styles.css
 
 PROPERTIES<br/>
 Passing to values/"variables" to components as props<br/>
-=> Post.jsx: ... export default Post(props){}<br/>
-=> App.jsx: ... <Post author='AnyName' content'any text' /><br/>
+=> Post.jsx:
+`export default Post(props){}`<br/>
+=> App.jsx:
+`<Post author='AnyName' content'any text' />`
+<br/>
 each component can have his own values<br/>
 
 HTML<br/>
@@ -86,4 +101,5 @@ import Fonts on index.html (tip- move preconnect to top of index.html <head>, be
 
 ASSETS (src/assetc)
 
-- images (import igniteLogo from "../assets/ignite-logo.svg";)
+- images<br/>
+  `import igniteLogo from "../assets/ignite-logo.svg";`

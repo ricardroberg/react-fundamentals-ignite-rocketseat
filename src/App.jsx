@@ -1,3 +1,5 @@
+import uuid from "react-uuid";
+
 import { Header } from "./components/Header";
 import { Post } from "./components/Post";
 import { Sidebar } from "./components/Sidebar";
@@ -38,7 +40,7 @@ const posts = [
     publishedAt: new Date("2022-06-15 21:05:33"),
   },
   {
-    id: 1,
+    id: 2,
     author: {
       avatarUrl: "https://github.com/diego3g.png",
       name: "Diego Fernandes",
@@ -58,7 +60,9 @@ const posts = [
           "no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀",
       },
       { type: "link", content: "jane.design/doctorcare" },
-      { type: "hashTag", content: ["#novoprojeto", "#nlw", "#rocketseat"] },
+      { type: "hashTag", content: "#novoprojeto" },
+      { type: "hashTag", content: "#nlw" },
+      { type: "hashTag", content: "#rocketseat" },
     ],
     publishedAt: new Date("2022-07-25 11:05:33"),
   },
@@ -73,6 +77,7 @@ export function App() {
         <main>
           {posts.map((post) => (
             <Post
+              key={uuid()}
               author={post.author}
               content={post.content}
               publishedAt={post.publishedAt}
